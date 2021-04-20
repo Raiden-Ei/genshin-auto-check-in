@@ -12,13 +12,13 @@ An awesome project for developers. Written in Javascript
 1. Rename the config file from `config.example.js` to `config.js`
 1. Fill `signCookie` array with copied result (DO NOT MODIFY ANY OTHER SETTINGS UNLESS YOU DO UNDERSTAND EXACTLY WHAT YOU ARE DOING)
 1. Run `npm install` and `node index.js`
-1. Wait until 1:00 AM
+1. Wait until 0:00 AM (UTC +8)
 
 # Want to add more accounts?
 1. Open new browser
 1. Repeat 1-5 in the 1st section with another account
 1. Change `signCookie` key in the config file like an example
-1. Restart the program
+1. Literally done! restarting isn't required.
 
 ```js
 // Example
@@ -30,6 +30,10 @@ signCookie: [
   // add more accounts if you want..
 ]
 ```
+
+# Discord webhook integration
+1. Create a webhook
+1. Edit `webhookURI` key.
 
 # License
 This program is licensed under GNU Affero General Public License v3.
