@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="98b6bd7d-1163-48af-8cb5-219319e95241" name="Default Changelist" comment="Reset config file cache after job" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1rMmQS2Ksz4knOATVp9QL6rMSTj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="javascript.nodejs.core.library.configured.version" value="15.5.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.41" />
+    <property name="js.linters.configure.manually.selectedeslint" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="98b6bd7d-1163-48af-8cb5-219319e95241" name="Default Changelist" comment="" />
+      <created>1618794317093</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618794317093</updated>
+      <workItem from="1618794318275" duration="5560000" />
+      <workItem from="1618799970198" duration="901000" />
+      <workItem from="1618801905713" duration="1372000" />
+      <workItem from="1618844277566" duration="3172000" />
+      <workItem from="1618913195655" duration="802000" />
+      <workItem from="1618914015889" duration="18000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1618799601448</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1618799601448</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fix wrong guide (Open browser console)">
+      <created>1618799720578</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618799720578</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fix Issue and PR link">
+      <created>1618799789927</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1618799789927</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fix Issue and PR link">
+      <created>1618799816250</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618799816250</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Wait 5s per account for prevent detection">
+      <created>1618800075938</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618800075938</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Create getDate function">
+      <created>1618800896484</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618800896484</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Display check-in progress">
+      <created>1618802182983</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1618802182983</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Replace Promise#allSettled with for loop">
+      <created>1618845769039</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1618845769039</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Define china timezone for default">
+      <created>1618846201022</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1618846201022</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Include config file whenever job is started">
+      <created>1618847487404</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1618847487404</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Reset config file cache after job">
+      <created>1618913508463</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1618913508463</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="Fix wrong guide (Open browser console)" />
+    <MESSAGE value="Fix Issue and PR link" />
+    <MESSAGE value="Wait 5s per account for prevent bot detection" />
+    <MESSAGE value="Create getDate function" />
+    <MESSAGE value="Display check-in progress" />
+    <MESSAGE value="Replace Promise#allSettled with for loop" />
+    <MESSAGE value="Define china timezone for default" />
+    <MESSAGE value="Include config file whenever job is started" />
+    <MESSAGE value="Reset config file cache after job" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reset config file cache after job" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

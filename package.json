@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "node-cron": "^3.0.0",
+    "node-fetch": "^2.6.1"
+  },
+  "name": "genshin-auto-check-in",
+  "version": "1.0.0",
+  "description": "Provides automated check-in service for Genshin Impact",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkyFlags/genshin-auto-check-in.git"
+  },
+  "keywords": [
+    "genshin"
+  ],
+  "author": "SkyFlags",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SkyFlags/genshin-auto-check-in/issues"
+  },
+  "homepage": "https://github.com/SkyFlags/genshin-auto-check-in#readme"
+}
