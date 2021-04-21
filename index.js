@@ -21,6 +21,8 @@ cron.schedule('0 0 * * *', async () => {
   for await (const jobCookie of config.signCookie) {
     // Fetch accountID from Cookie
     const accountID = parseCookie(jobCookie).account_id;
+    // Wait for bypass security check
+    await waitFor(typeof config.delay === 'number' ? config.delay : 2000);
     // Fetch in-game userID from hoyolab
     let userID = await fetch(`${config.hoyolabURI}?uid=${accountID}`, {
       headers: {
