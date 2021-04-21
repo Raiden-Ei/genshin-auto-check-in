@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98b6bd7d-1163-48af-8cb5-219319e95241" name="Default Changelist" comment="feat(API): Fetch UID, Support multi webhooks">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="98b6bd7d-1163-48af-8cb5-219319e95241" name="Default Changelist" comment="chore(Package): Separate devDependencies from package.json">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +71,8 @@
       <workItem from="1618914015889" duration="18000" />
       <workItem from="1618914043823" duration="163000" />
       <workItem from="1619013840202" duration="44000" />
-      <workItem from="1619013907475" duration="486000" />
+      <workItem from="1619013907475" duration="534000" />
+      <workItem from="1619014537155" duration="36000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1618799601448</created>
@@ -158,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619014137895</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="chore(Package): Separate devDependencies from package.json">
+      <created>1619014422943</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1619014422943</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +198,8 @@
     <MESSAGE value="Include config file whenever job is started" />
     <MESSAGE value="Reset config file cache after job" />
     <MESSAGE value="feat(API): Fetch UID, Support multi webhooks" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(API): Fetch UID, Support multi webhooks" />
+    <MESSAGE value="chore(Package): Separate devDependencies from package.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore(Package): Separate devDependencies from package.json" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

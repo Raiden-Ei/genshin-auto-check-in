@@ -1,10 +1,11 @@
 const fetch = require('node-fetch');
 const cron = require('node-cron');
+const moment = require('moment');
 
 // Initial ready message
 console.log(`[${getDate()}] Program is ready! please wait until next 0:00 (UTC +8)`);
 
-cron.schedule('*/30 * * * * *', async () => {
+cron.schedule('0 0 * * *', async () => {
   /**
    *  Start automated genshin impact check-in helper
    *  We're gonna use for await ... of loop
@@ -146,6 +147,5 @@ async function waitFor(ms) {
 }
 
 function getDate() {
-  const date = new Date();
-  return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+  return moment().format('YYYY-MM-DD HH:mm:ss')
 }
