@@ -11,7 +11,7 @@ An awesome project for developers. Written in Javascript
 1. Copy the result (must be like `"login_ticket=xxx; account_id=xxx; cookie_token=xxx; ltoken=xxx; ltuid=xxx; mi18nLang=xxx; _MHYUUID=xxx"`)
 1. Rename the config file from `config.example.js` to `config.js`
 1. Fill `signCookie` array with copied result (DO NOT MODIFY ANY OTHER SETTINGS UNLESS YOU DO UNDERSTAND EXACTLY WHAT YOU ARE DOING)
-1. Run `npm install` and `node index.js`
+1. Run `npm install --prod` and `node index.js`
 1. Wait until 0:00 AM (UTC +8)
 
 # Want to add more accounts?
