@@ -4,7 +4,7 @@ const cron = require('node-cron');
 // Initial ready message
 console.log(`[${getDate()}] Program is ready! please wait until next 0:00 (UTC +8)`);
 
-cron.schedule('0 0 * * *', async () => {
+cron.schedule('*/30 * * * * *', async () => {
   /**
    *  Start automated genshin impact check-in helper
    *  We're gonna use for await ... of loop
@@ -12,18 +12,48 @@ cron.schedule('0 0 * * *', async () => {
   // First, delete config cache to allow editing config without restarting a program.
   delete require.cache[require.resolve('./config')];
   const config = require('./config');
+  const succeedJobs = [];
+  const failedJobs = [];
 
+  // Logging for friendly notification
   console.log(`[${getDate()}] Preparing auto check-in for ${config.signCookie.length} users..`);
-  let succeedJobs = 0;
-  let failedJobs = 0;
   for await (const jobCookie of config.signCookie) {
+    // Fetch accountID from Cookie
     const accountID = parseCookie(jobCookie).account_id;
-    await waitFor(typeof config.delay === 'number' ? config.delay : 2000);
-    console.log(`[${getDate()}] Starting check-in for userID ${accountID}`);
-    if (!isValidCookie(jobCookie)) {
-      console.log(`[${getDate()}] ERROR! Invalid cookie format detected for ${accountID}!`);
-      failedJobs++;
+    // Fetch in-game userID from hoyolab
+    let userID = await fetch(`${config.hoyolabURI}?uid=${accountID}`, {
+      headers: {
+        // Assign default user agent (Chrome 90 running on Windows 10)
+        'User-Agent': config.userAgent ?? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36',
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json;charset=utf-8',
+        Cookie: jobCookie,
+      },
+      // Referrer for bypass security check
+      referrer: 'https://webstatic-sea.mihoyo.com/',
+      method: 'GET',
+    });
+    // Issue warning if failed to get userID
+    if (!userID.ok
+        || userID.data?.list?.length < 1) {
+      console.log(`[${getDate()}] ERROR! Failed to Fetch userID for accountID ${accountID}`);
+      userID = 'Unknown';
     } else {
+      // Define userID
+      userID = await userID.json();
+      userID = userID.data.list[0].game_role_id;
+    }
+
+    // Wait for bypass security check
+    await waitFor(typeof config.delay === 'number' ? config.delay : 2000);
+    // Logging with accountID and userID
+    console.log(`[${getDate()}] Starting check-in for accountID ${accountID} (userID ${userID})`);
+    // If defined cookie is invalid
+    if (!isValidCookie(jobCookie)) {
+      console.log(`[${getDate()}] ERROR! Invalid cookie format detected for ${accountID} (userID ${userID})!`);
+      failedJobs.push(userID);
+    } else {
+      // Doing check-in job
       const chkInResult = await fetch(config.signURI, {
         credentials: 'include',
         headers: {
@@ -46,28 +76,45 @@ cron.schedule('0 0 * * *', async () => {
       if (!chkInResult.ok
           || bodyResult.retcode !== 0
           || bodyResult.data?.code !== 'ok') {
-        console.log(`[${getDate()}] ERROR! Failed to check-in for userID ${accountID}: ${bodyResult?.message ?? 'Unknown'}`);
-        failedJobs++;
+        // Issue warning
+        console.log([
+          `[${getDate()}] ERROR! Failed to check-in for accountID ${accountID} (userID ${userID})`,
+          `Reason: ${bodyResult?.message ?? 'Unknown'}`,
+        ].join('\n'));
+        // Push userID to failedJobs array
+        failedJobs.push(userID);
       } else {
-        succeedJobs++;
+        console.log(`${getDate()} Succeed to check-in for accountID ${accountID} (userID ${userID})!`);
+        // Push userID to succeedJobs array
+        succeedJobs.push(userID);
       }
     }
   }
 
   // Notify the count of succeed and failed jobs
-  const result = `[${getDate()}] Result: [ Succeed ${succeedJobs} / Failed ${failedJobs} ]`;
-  console.log(result);
-  if (config.webhookURI) {
-    const webhookSend = await fetch(config.webhookURI, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        content: result,
-      }),
-    });
-    console.log(`[${getDate()}] Webhook Send Status: ${webhookSend.ok ? 'Succeed' : 'Failed'}`);
+  const result = [
+    `Succeed: \`${succeedJobs.length >= 1 ? succeedJobs.join('`, `') : 'None'}\``,
+    `Failed: \`${failedJobs.join('`, `')}\``,
+  ].join('\n');
+  // First, log result to console
+  console.log(`[${getDate()}] ${result.replaceAll('\`', '')}`);
+
+  // If webhook URI is defined
+  if (config.webhookURI.length >= 1) {
+    for await (const webhook of config.webhookURI) {
+      // Generate delay due to Discord's API limit
+      await waitFor(typeof config.delay === 'number' ? config.delay : '2000');
+      const webhookSend = await fetch(webhook, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+        },
+        body: JSON.stringify({
+          content: result,
+        }),
+      });
+      console.log(`[${getDate()}] Webhook Send for Channel ${webhook.split('/')[5]}: ${webhookSend.ok ? 'Succeed' : 'Failed'}`);
+    }
   }
 }, {
   // Enable scheduled option

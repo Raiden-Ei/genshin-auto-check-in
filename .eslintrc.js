@@ -20,6 +20,7 @@ module.exports = {
     'no-restricted-syntax': 'off',
     'no-plusplus': 'off',
     'global-require': 'off',
+    'no-useless-escape': 'off',
   },
   ignorePatterns: ['node_modules/'],
 };
