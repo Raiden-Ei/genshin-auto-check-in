@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98b6bd7d-1163-48af-8cb5-219319e95241" name="Default Changelist" comment="chore(Package): Use moment.js instead">
+    <list default="true" id="98b6bd7d-1163-48af-8cb5-219319e95241" name="Default Changelist" comment="feat(API): Wait before fetching in-game userID">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
@@ -73,7 +73,8 @@
       <workItem from="1619013840202" duration="44000" />
       <workItem from="1619013907475" duration="534000" />
       <workItem from="1619014537155" duration="197000" />
-      <workItem from="1619015359762" duration="14000" />
+      <workItem from="1619015359762" duration="184000" />
+      <workItem from="1619021072561" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1618799601448</created>
@@ -173,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619014595943</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat(API): Wait before fetching in-game userID">
+      <created>1619015411665</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1619015411665</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +216,8 @@
     <MESSAGE value="feat(API): Fetch UID, Support multi webhooks" />
     <MESSAGE value="chore(Package): Separate devDependencies from package.json" />
     <MESSAGE value="chore(Package): Use moment.js instead" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore(Package): Use moment.js instead" />
+    <MESSAGE value="feat(API): Wait before fetching in-game userID" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(API): Wait before fetching in-game userID" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -97,7 +97,7 @@ cron.schedule('0 0 * * *', async () => {
   // Notify the count of succeed and failed jobs
   const result = [
     `Succeed: \`${succeedJobs.length >= 1 ? succeedJobs.join('`, `') : 'None'}\``,
-    `Failed: \`${failedJobs.join('`, `')}\``,
+    `Failed: \`${failedJobs.length >= 1 ? failedJobs.join('`, `') : 'None'}\``,
   ].join('\n');
   // First, log result to console
   console.log(`[${getDate()}] ${result.replaceAll('\`', '')}`);
