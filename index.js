@@ -92,7 +92,7 @@ cron.schedule('0 0 * * *', async () => {
         // Push userID to failedJobs array
         failedJobs.push(userID);
       } else {
-        console.log(`${getDate()} Succeed to check-in for accountID ${accountID} (userID ${userID})!`);
+        console.log(`[${getDate()}] Succeed to check-in for accountID ${accountID} (userID ${userID})!`);
         // Push userID to succeedJobs array
         succeedJobs.push(userID);
       }
