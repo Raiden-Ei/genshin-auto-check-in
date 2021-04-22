@@ -15,16 +15,19 @@ cron.schedule('0 0 * * *', async () => {
   const config = require('./config');
   const succeedJobs = [];
   const failedJobs = [];
+  // Define nickname object
+  const gameNickname = {};
 
   // Logging for friendly notification
   console.log(`[${getDate()}] Preparing auto check-in for ${config.signCookie.length} users..`);
   for await (const jobCookie of config.signCookie) {
+  let userID;
     // Fetch accountID from Cookie
     const accountID = parseCookie(jobCookie).account_id;
     // Wait for bypass security check
     await waitFor(typeof config.delay === 'number' ? config.delay : 2000);
     // Fetch in-game userID from hoyolab
-    let userID = await fetch(`${config.hoyolabURI}?uid=${accountID}`, {
+    let userInfo = await fetch(`${config.hoyolabURI}?uid=${accountID}`, {
       headers: {
         // Assign default user agent (Chrome 90 running on Windows 10)
         'User-Agent': config.userAgent ?? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36',
@@ -37,14 +40,16 @@ cron.schedule('0 0 * * *', async () => {
       method: 'GET',
     });
     // Issue warning if failed to get userID
-    if (!userID.ok
-        || userID.data?.list?.length < 1) {
+    if (!userInfo.ok
+        || userInfo.data?.list?.length < 1) {
       console.log(`[${getDate()}] ERROR! Failed to Fetch userID for accountID ${accountID}`);
       userID = 'Unknown';
+    gameNickname[userID] = 'Unknown';
     } else {
       // Define userID
-      userID = await userID.json();
-      userID = userID.data.list[0].game_role_id;
+      userInfo = await userInfo.json();
+      userID = userInfo.data.list[0].game_role_id;
+    gameNickname[userID] = userInfo.data.list[0].nickname;
     }
 
     // Wait for bypass security check
@@ -82,7 +87,7 @@ cron.schedule('0 0 * * *', async () => {
         // Issue warning
         console.log([
           `[${getDate()}] ERROR! Failed to check-in for accountID ${accountID} (userID ${userID})`,
-          `Reason: ${bodyResult?.message ?? 'Unknown'}`,
+          `[${getDate()}] Reason: ${bodyResult?.message ?? 'Unknown'}`,
         ].join('\n'));
         // Push userID to failedJobs array
         failedJobs.push(userID);
@@ -94,13 +99,18 @@ cron.schedule('0 0 * * *', async () => {
     }
   }
 
-  // Notify the count of succeed and failed jobs
-  const result = [
-    `Succeed: \`${succeedJobs.length >= 1 ? succeedJobs.join('`, `') : 'None'}\``,
-    `Failed: \`${failedJobs.length >= 1 ? failedJobs.join('`, `') : 'None'}\``,
-  ].join('\n');
+  // Result notification
+  console.log(`[${getDate()}] Check-in completed! fetching result..`);
+  // Fetch both succeed and failed result
+  const succeedResult = succeedJobs.length > 0 ? succeedJobs.map((job) => `${job} (${gameNickname[job]})`).join('`, `') : 'None';
+  const failedResult = failedJobs.length > 0 ? failedJobs.map((job) => `${job} (${gameNickname[job]})`).join('`, `') : 'None';
   // First, log result to console
-  console.log(`[${getDate()}] ${result.replaceAll('\`', '')}`);
+  console.log([
+    `===================================`,
+    `[${getDate()}] Succeed: ${succeedResult.replaceAll('`', '')}`,
+    `[${getDate()}] Failed: ${failedResult.replaceAll('`', '')}`,
+    `===================================`
+  ].join('\n'));
 
   // If webhook URI is defined
   if (config.webhookURI.length >= 1) {
@@ -113,7 +123,10 @@ cron.schedule('0 0 * * *', async () => {
           'Content-Type': 'application/json;charset=utf-8',
         },
         body: JSON.stringify({
-          content: result,
+          content: [
+            `Succeed: \`${succeedResult}\``,
+            `Failed: \`${failedResult}\``,
+          ].join('\n'),
         }),
       });
       console.log(`[${getDate()}] Webhook Send for Channel ${webhook.split('/')[5]}: ${webhookSend.ok ? 'Succeed' : 'Failed'}`);
@@ -129,7 +142,7 @@ cron.schedule('0 0 * * *', async () => {
 function isValidCookie(cookies) {
   if (typeof cookies !== 'string') return undefined;
   const output = parseCookie(cookies);
-  const requiredFields = ['account_id', 'cookie_token', 'ltoken'];
+  const requiredFields = ['account_id', 'cookie_token'];
   return requiredFields
     .map((field) => Object.keys(output).includes(field))
     .every((element) => !!element);
