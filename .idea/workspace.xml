@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e4fe8f8-2f62-44be-a831-54807dd6bf91" name="Default Changelist" comment="feat(API): Wait before fetching in-game userID">
+    <list default="true" id="5e4fe8f8-2f62-44be-a831-54807dd6bf91" name="Default Changelist" comment="chore(API): Indent fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +46,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.5.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.41" />
+    <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -51,13 +55,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="98b6bd7d-1163-48af-8cb5-219319e95241" name="Default Changelist" comment="" />
+      <changelist id="5e4fe8f8-2f62-44be-a831-54807dd6bf91" name="Default Changelist" comment="chore(API): Indent fix" />
       <created>1618794317093</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -74,6 +78,8 @@
       <workItem from="1619014537155" duration="197000" />
       <workItem from="1619015359762" duration="184000" />
       <workItem from="1619021072561" duration="27000" />
+      <workItem from="1619320227483" duration="16000" />
+      <workItem from="1619321076224" duration="917000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1618799601448</created>
@@ -180,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619015411665</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="chore(API): Indent fix">
+      <created>1619314653976</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1619314653976</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +229,8 @@
     <MESSAGE value="chore(Package): Separate devDependencies from package.json" />
     <MESSAGE value="chore(Package): Use moment.js instead" />
     <MESSAGE value="feat(API): Wait before fetching in-game userID" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(API): Wait before fetching in-game userID" />
+    <MESSAGE value="chore(API): Indent fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore(API): Indent fix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
