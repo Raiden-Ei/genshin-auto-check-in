@@ -4,8 +4,6 @@
     <list default="true" id="5e4fe8f8-2f62-44be-a831-54807dd6bf91" name="Default Changelist" comment="chore(API): Indent fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +78,7 @@
       <workItem from="1619021072561" duration="27000" />
       <workItem from="1619320227483" duration="16000" />
       <workItem from="1619321076224" duration="917000" />
+      <workItem from="1619322150180" duration="255000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1618799601448</created>

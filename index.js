@@ -5,7 +5,7 @@ const moment = require('moment');
 // Initial ready message
 console.log(`[${getDate()}] Program is ready! please wait until next 0:00 (UTC +8)`);
 
-cron.schedule('*/10 * * * * *', async () => {
+cron.schedule('0 0 * * *', async () => {
   /**
    *  Start automated genshin impact check-in helper
    *  We're gonna use for await ... of loop
