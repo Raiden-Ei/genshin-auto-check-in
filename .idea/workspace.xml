@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98b6bd7d-1163-48af-8cb5-219319e95241" name="Default Changelist" comment="feat(API): Wait before fetching in-game userID">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="5e4fe8f8-2f62-44be-a831-54807dd6bf91" name="Default Changelist" comment="feat(API): Wait before fetching in-game userID">
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

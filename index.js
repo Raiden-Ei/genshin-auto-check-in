@@ -44,12 +44,12 @@ cron.schedule('0 0 * * *', async () => {
         || userInfo.data?.list?.length < 1) {
       console.log(`[${getDate()}] ERROR! Failed to Fetch userID for accountID ${accountID}`);
       userID = 'Unknown';
-    gameNickname[userID] = 'Unknown';
+      gameNickname[userID] = 'Unknown';
     } else {
       // Define userID
       userInfo = await userInfo.json();
       userID = userInfo.data.list[0].game_role_id;
-    gameNickname[userID] = userInfo.data.list[0].nickname;
+      gameNickname[userID] = userInfo.data.list[0].nickname;
     }
 
     // Wait for bypass security check
