@@ -25,7 +25,7 @@ cron.schedule('0 0 * * *', async () => {
     // Create axios instance
     const instance = axios.create({
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36',
+        'User-Agent': config.userAgent ?? 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36',
         Cookie: jobCookie,
         Accept: 'application/json, text/plain, */*',
         'Content-Type': 'application/json;charset=utf-8',
